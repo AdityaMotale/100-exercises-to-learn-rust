@@ -10,6 +10,14 @@
 //
 // Use only what you learned! No loops yet, so you'll have to use recursion!
 
+fn factorial(n: u32) -> u32 {
+    let mut sum: u32 = 1;
+
+    (1..=n).for_each(|f: u32| sum *= f);
+
+    sum
+}
+
 #[cfg(test)]
 mod tests {
     use crate::factorial;
