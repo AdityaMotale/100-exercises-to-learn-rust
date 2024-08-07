@@ -10,15 +10,19 @@ pub mod ticket {
             if title.is_empty() {
                 panic!("Title cannot be empty");
             }
+
             if title.len() > 50 {
                 panic!("Title cannot be longer than 50 bytes");
             }
+
             if description.is_empty() {
                 panic!("Description cannot be empty");
             }
+
             if description.len() > 500 {
                 panic!("Description cannot be longer than 500 bytes");
             }
+
             if status != "To-Do" && status != "In Progress" && status != "Done" {
                 panic!("Only `To-Do`, `In Progress`, and `Done` statuses are allowed");
             }
@@ -30,10 +34,17 @@ pub mod ticket {
             }
         }
 
-        // TODO: Add three public methods to the `Ticket` struct:
-        //  - `title` that returns the `title` field.
-        //  - `description` that returns the `description` field.
-        //  - `status` that returns the `status` field.
+        pub fn title(&self) -> String {
+            self.title.clone()
+        }
+
+        pub fn description(&self) -> String {
+            self.description.clone()
+        }
+
+        pub fn status(&self) -> String {
+            self.status.clone()
+        }
     }
 }
 
